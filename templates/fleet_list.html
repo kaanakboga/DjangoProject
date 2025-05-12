@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fleet Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Fleet Management</h2>
+
+        <!-- Yeni Gemi Ekleme Formu -->
+        <form id="shipForm" method="POST" action="{% url 'add_ship' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" name="name" class="form-control" placeholder="Ship Name" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" name="ship_type" class="form-control" placeholder="Ship Type" required>
+            </div>
+            <div class="mb-3">
+                <input type="number" name="gt" class="form-control" placeholder="Gross Tonnage (GT)" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" name="fuel_type" class="form-control" placeholder="Fuel Type" required>
+            </div>
+            <div class="mb-3">
+                <input type="number" step="0.01" name="emission_level" class="form-control" placeholder="Emission Level" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" name="compliance_strategy" class="form-control" placeholder="Compliance Strategy (LNG, bio-MGO, e-methanol)" required>
+            </div>
+            <button type="submit" class="btn btn-success">Add Ship</button>
+        </form>
+
+        <hr>
+
+        <!-- Gemi Listesi -->
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>GT</th>
+                    <th>Fuel Type</th>
+                    <th>Emission Level</th>
+                    <th>Compliance Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ship in ships %}
+                <tr>
+                    <td>{{ ship.id }}</td>
+                    <td>{{ ship.name }}</td>
+                    <td>{{ ship.ship_type }}</td>
+                    <td>{{ ship.gt }}</td>
+                    <td>{{ ship.fuel_type }}</td>
+                    <td>{{ ship.emission_level }}</td>
+                    <td>{{ ship.compliance_strategy }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

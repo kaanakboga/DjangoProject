@@ -1,12 +1,13 @@
 from django.contrib import admin
-from django.contrib.auth.models import User
+from .models import GeneralSetting, Ship
 
-from core.models import *
-# Register your models here.
 @admin.register(GeneralSetting)
 class GeneralSettingAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'description', 'parameter', 'updated_date', 'create_date']
     search_fields = ['name', 'description', 'parameter']
-    list_editable = ['description', 'parameter']
-    class Meta:
-        model = GeneralSetting
+
+@admin.register(Ship)
+class ShipAdmin(admin.ModelAdmin):
+    list_display = ['name', 'ship_type', 'gt', 'fuel_type', 'emission_level', 'compliance_strategy']
+    search_fields = ['name', 'ship_type', 'fuel_type']
+    list_filter = ['fuel_type', 'compliance_strategy']

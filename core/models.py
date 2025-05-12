@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class GeneralSettings(models.Model):
+class GeneralSetting(models.Model):
     name = models.CharField(
         default='',
         max_length=255,

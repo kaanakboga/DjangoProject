@@ -47,7 +47,6 @@ def utilities_other(request):
     return render(request, 'utilities-other.html')
 
 
-# ✅ Yeni Eklenen Kısımlar (Gemi Listeleme ve Ekleme)
 def fleet_list(request):
     ships = Ship.objects.all()
     return render(request, 'tables.html', {'ships': ships})

@@ -27,7 +27,6 @@ urlpatterns = [
     path('utilities-border/', utilities_border, name='utilities-border'),
     path('utilities-animation/', utilities_animation, name='utilities-animation'),
 
-    # ✅ Yeni eklenen URL'ler
     path('fleet/', fleet_list, name='fleet_list'),
     path('add-ship/', add_ship, name='add_ship'),
 ]

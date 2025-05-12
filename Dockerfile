@@ -14,6 +14,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 ADD ./requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 
+
 COPY . /srv/app
 WORKDIR /srv/app
 

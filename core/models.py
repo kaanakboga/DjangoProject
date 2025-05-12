@@ -9,13 +9,13 @@ class GeneralSettings(models.Model):
     )
     description = models.CharField(
         default='',
-        max_length=255,
+        max_length=254,
         blank=True,
     )
 
-    parameter = models.TextField(
+    parameter = models.CharField(
         default='',
-        max_length=255,
+        max_length=254,
         blank=True,
     )
     

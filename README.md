@@ -1,4 +1,4 @@
-# 🌊 Fleet Management Dashboard
+# 🌊 Ship Control Panel
 
 Fleet Management Dashboard is a Django-based web application designed to manage and monitor ships and their environmental compliance data in line with maritime emission strategies (e.g., LNG, bio-MGO, e-methanol).
 

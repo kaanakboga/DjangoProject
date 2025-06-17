@@ -22,8 +22,6 @@ You can include screenshots in this section. For example:
 ![Tables](screenshots/tables.png)
 ![Add Ship](screenshots/addship.png)
 
-Create a `screenshots/` folder and place your images there.
-
 ---
 
 ## 📁 Project Structure
